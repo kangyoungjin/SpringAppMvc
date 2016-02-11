@@ -21,8 +21,8 @@ public class SpringTest {
 	
 	@Test
 	public void test() throws Exception{
-//		log.info("----------------------------");
-//		log.info(str);
-//		log.info("----------------------------");
+		log.info("----------------------------");
+		log.info(str);
+		log.info("----------------------------");
 	}
 }
