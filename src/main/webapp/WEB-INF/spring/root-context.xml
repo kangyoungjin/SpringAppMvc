@@ -16,7 +16,8 @@
 		<bean id='test' class='java.lang.String'>
 			<constructor-arg><value>Hello World 2016-01-15  deva.jin </value></constructor-arg>
 		</bean>
-		<util:properties id="prop" location="classpath:/springConfig/db-properties.xml"> </util:properties>
+	
+	<util:properties id="prop" location="classpath:/springConfig/db-properties.xml"> </util:properties>
 	
 		
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
