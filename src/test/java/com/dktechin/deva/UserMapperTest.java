@@ -1,9 +1,15 @@
 package com.dktechin.deva;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
+
 import org.junit.Test;
+
 import com.dktechin.deva.mappers.UserMapper;
+import com.dktechin.deva.vo.CriteriaVO;
 import com.dktechin.deva.vo.UsersVO;
 
 public class UserMapperTest extends SpringTest{
@@ -58,5 +64,20 @@ public class UserMapperTest extends SpringTest{
 		um.delete("sodabo2000@kakaocorp.com");
 	}*/
 	
+	@Test
+	public void listTest()throws Exception{
+		CriteriaVO cvo = new CriteriaVO();
+		List<UsersVO> ulist = new ArrayList<UsersVO>();
+
+		String[] type = {"user_name"};
+		cvo.setPage(1);
+		cvo.setType(type);
+		cvo.setKeyword("tec");
+		
+		ulist = um.list(cvo);
+		log.info("---------------------------");
+		log.info(ulist.toString());
+		log.info("---------------------------");
+	}
 	
 }
