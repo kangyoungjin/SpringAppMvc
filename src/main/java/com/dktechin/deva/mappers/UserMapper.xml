@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dktechin.deva.mappers.UserMapper">
+	<insert id="create">
+  	insert into TB_users 
+			(user_name, user_nick, user_password, user_addr, user_email, user_phone, user_desc, user_issys)
+	values  (#{user_name}, #{user_nick}, #{user_password}, #{user_addr}, #{user_email}, #{user_phone}, #{user_desc}, #{user_issys})
+	</insert>
+	
+	<select id="read" resultType="com.dktechin.deva.vo.UsersVO">
+	select user_seq, user_name, user_nick, user_password, user_addr, user_email, 
+		user_phone, user_desc, user_issys, user_x, user_y, user_intidate 
+		from TB_users where user_email = #{user_email}
+	</select>  
+	
+	<update id="update">
+	update TB_users SET user_name=#{user_name}, user_password = #{user_password}, user_phone=#{user_phone}, 
+		user_addr=#{user_addr}, user_x=#{user_x}, user_y =#{user_y},
+		user_desc=#{user_desc}, user_issys=#{user_issys} where user_email = #{user_email}
+	</update>
+	
+	<delete id="delete">
+	delete from TB_users where user_email = #{user_email}
+	</delete>
+	
+	<select id="list">
+	select a.* from
+			(select t.* , <![CDATA[@rownum]]> as totcnt  
+				from 
+					(select <![CDATA[@rownum := @rownum]]> + 1 as rnum,
+					 	hub_id, hub_user, hub_pw, hub_udate, hub_intidate from TB_hub, 
+								(select <![CDATA[@rownum :=0]]>) as r 
+									<where>
+										<if test="type !=null">
+											<foreach collection="type" index="index" item="item" separator="OR">
+												<if test="item==&quot;hubid&quot;">hub_id</if>
+												<if test="item==&quot;hubuser&quot;">hub_user</if>
+												like CONCAT('%',#{keyword},'%')
+											</foreach>
+										</if>
+									</where>
+								order by hub_user DESC) t
+							 where t.rnum <![CDATA[<=]]> (CEIL(#{page}/10))*100+1) a
+						 where a.rnum between ((#{page}-1)*10)+1 and (#{page}*10)
+	</select>
+
+</mapper>
