@@ -69,10 +69,10 @@ public class UserMapperTest extends SpringTest{
 		CriteriaVO cvo = new CriteriaVO();
 		List<UsersVO> ulist = new ArrayList<UsersVO>();
 
-		String[] type = {"user_name"};
+		String[] type = {"user_phone"};
 		cvo.setPage(1);
 		cvo.setType(type);
-		cvo.setKeyword("tec");
+		cvo.setKeyword("22");
 		
 		ulist = um.list(cvo);
 		log.info("---------------------------");
