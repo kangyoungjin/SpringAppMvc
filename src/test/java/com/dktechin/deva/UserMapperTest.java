@@ -14,10 +14,10 @@ import com.dktechin.deva.vo.UsersVO;
 
 public class UserMapperTest extends SpringTest{
 	
-	@Inject
+	/*@Inject
 	UserMapper um;
 	
-	/*@Test
+	@Test
 	public void insertTest() throws Exception{
 		UsersVO uv = new UsersVO();
 		uv.setUser_name("노라");
@@ -62,9 +62,9 @@ public class UserMapperTest extends SpringTest{
 /*	@Test
 	public void deleteTest() throws Exception{
 		um.delete("sodabo2000@kakaocorp.com");
-	}*/
+	}
 	
-	//@Test
+	@Test
 	public void listTest()throws Exception{
 		CriteriaVO cvo = new CriteriaVO();
 		List<UsersVO> ulist = new ArrayList<UsersVO>();
@@ -78,6 +78,6 @@ public class UserMapperTest extends SpringTest{
 		log.info("---------------------------");
 		log.info(ulist.toString());
 		log.info("---------------------------");
-	}
+	}*/
 	
 }
