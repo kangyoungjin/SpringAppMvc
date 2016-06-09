@@ -26,6 +26,8 @@
 			<property name="url" value="#{prop['database.url_dk']}"/>
 			<property name="username" value="#{prop['database.username']}"/>
 			<property name="password" value="#{prop['database.password']}"/>
+			
+			
 			<!-- <property name="initialSize" value="#{prop['database.min.size']}" />
 				<property name="maxActive" value="#{prop['database.max.size']}" /> -->
 			<property name="maxIdle" value="50" />
