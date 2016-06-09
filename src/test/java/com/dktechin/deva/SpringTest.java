@@ -16,7 +16,7 @@ public class SpringTest {
 
 	protected Logger log = Logger.getLogger(this.getClass());
 	
-	@Inject
+	/*@Inject
 	String str;
 	
 	@Test
@@ -24,5 +24,5 @@ public class SpringTest {
 		log.info("----------------------------");
 		log.info(str);
 		log.info("----------------------------");
-	}
+	}*/
 }

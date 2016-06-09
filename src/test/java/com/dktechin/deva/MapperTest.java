@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class MapperTest extends SpringTest {
 	
-	@Inject
+	/*@Inject
 	SqlSessionFactory sf;
 	
 	@Test
@@ -17,6 +17,6 @@ public class MapperTest extends SpringTest {
 		log.info("---------------------------");
 		log.info(session.selectOne("com.dktechin.deva.mappers.Timmer.getTime"));
 		log.info("---------------------------");
-	}
+	}*/
 	
 }
