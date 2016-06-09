@@ -9,10 +9,10 @@ import com.dktechin.deva.vo.UsersVO;
 
 public class UserServiceTest extends SpringTest {
 	
-	@Inject
+	/*@Inject
 	UsersService us;
 	
-	//@Test
+	@Test
 	public void createUserMethod() throws Exception{
 		UsersVO uv = new UsersVO();
 		uv.setUser_name("나오미");
@@ -24,6 +24,6 @@ public class UserServiceTest extends SpringTest {
 		uv.setUser_desc("테스트 이런 저런 계정 입니다. .!!!");
 		uv.setUser_issys("N");	
 		us.create(uv);
-	}
+	}*/
 	
 }

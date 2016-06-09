@@ -10,7 +10,7 @@ public class DBTest extends SpringTest {
 	@Inject
 	DataSource ds;
 	
-	//@Test
+	@Test
 	public void testDb() throws Exception{
 		log.info("-------------------------");
 		//log.info(ds.getConnection());

@@ -8,15 +8,15 @@ import org.junit.Test;
 
 public class MapperTest extends SpringTest {
 	
-	@Inject
+	/*@Inject
 	SqlSessionFactory sf;
 	
-	//@Test
+	@Test
 	public void sfTest() throws Exception{
 		SqlSession session = sf.openSession();
 		log.info("---------------------------");
 		log.info(session.selectOne("com.dktechin.deva.mappers.Timmer.getTime"));
 		log.info("---------------------------");
-	}
+	}*/
 	
 }
