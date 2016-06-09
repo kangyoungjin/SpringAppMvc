@@ -64,7 +64,7 @@ public class UserMapperTest extends SpringTest{
 		um.delete("sodabo2000@kakaocorp.com");
 	}*/
 	
-	@Test
+	//@Test
 	public void listTest()throws Exception{
 		CriteriaVO cvo = new CriteriaVO();
 		List<UsersVO> ulist = new ArrayList<UsersVO>();

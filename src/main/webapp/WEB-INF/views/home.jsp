@@ -11,10 +11,13 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
-<%String root = request.getContextPath(); %>
+<%String ip = request.getRemoteAddr(); 
+String root = request.getProtocol();
+%>
 
-<h1>${root }</h1>
-
+<h3>ip : <%=ip %></h3>
+<h3>root : <%=root %></h3>
+<h2>${userAgent }</h2>
 <div id="map" style="width:500px;height:400px;"></div>
 
 </body>

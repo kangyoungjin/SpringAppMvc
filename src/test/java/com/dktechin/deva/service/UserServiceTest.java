@@ -12,7 +12,7 @@ public class UserServiceTest extends SpringTest {
 	@Inject
 	UsersService us;
 	
-	@Test
+	//@Test
 	public void createUserMethod() throws Exception{
 		UsersVO uv = new UsersVO();
 		uv.setUser_name("나오미");

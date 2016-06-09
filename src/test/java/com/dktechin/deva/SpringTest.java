@@ -19,7 +19,7 @@ public class SpringTest {
 	@Inject
 	String str;
 	
-	@Test
+	//@Test
 	public void test() throws Exception{
 		/*log.info("----------------------------");
 		log.info(str);
