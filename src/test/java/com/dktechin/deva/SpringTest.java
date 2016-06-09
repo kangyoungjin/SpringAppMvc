@@ -16,13 +16,13 @@ public class SpringTest {
 
 	protected Logger log = Logger.getLogger(this.getClass());
 	
-	/*@Inject
+	@Inject
 	String str;
 	
-	@Test
+	//@Test
 	public void test() throws Exception{
-		log.info("----------------------------");
+		/*log.info("----------------------------");
 		log.info(str);
-		log.info("----------------------------");
-	}*/
+		log.info("----------------------------");*/
+	}
 }
