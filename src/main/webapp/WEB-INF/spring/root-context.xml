@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:util="http://www.springframework.org/schema/util"
-	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
-		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		<bean id='test' class='java.lang.String'>
 			<constructor-arg><value>Hello World 2016-01-15  deva.jin </value></constructor-arg>
 		</bean>
 	
-	<context:component-scan base-package="com.dktechin.deva.service"></context:component-scan>
-	<util:properties id="prop" location="classpath:/springConfig/db-properties.xml"> </util:properties>
 	
-		
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-			<property name="driverClassName" value="#{prop['database.driverClassName']}"/>
-			<property name="url" value="#{prop['database.url_dk']}"/>
-			<property name="username" value="#{prop['database.username']}"/>
-			<property name="password" value="#{prop['database.password']}"/>
-			<!-- <property name="initialSize" value="#{prop['database.min.size']}" />
-				<property name="maxActive" value="#{prop['database.max.size']}" /> -->
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		  destroy-method="close">
+			<property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"/>
+			<property name="url" value="jdbc:log4jdbc:mysql://172.28.31.40:3306/deva"/>
+			<property name="username" value="root"/>
+			<property name="password" value="1q2w3e4r"/>
+			<!-- <property name="initialSize" value="${jdbc.min.size}" />
+				<property name="maxActive" value="${jdbc.max.size}" /> -->
 			<property name="maxIdle" value="50" />
 			<property name="minIdle" value="20" />
 	</bean>
+
+
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath*:com/dktechin/deva/mappers/**/*.xml" />
 	</bean>	
-	
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
- 	    <property name="basePackage" value="com.dktechin.deva.mappers" />
-	</bean>	
+		
 </beans>
