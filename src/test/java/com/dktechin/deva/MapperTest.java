@@ -11,7 +11,7 @@ public class MapperTest extends SpringTest {
 	@Inject
 	SqlSessionFactory sf;
 	
-	//@Test
+	@Test
 	public void sfTest() throws Exception{
 		SqlSession session = sf.openSession();
 		log.info("---------------------------");
