@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	TEST DEVA APP 
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
@@ -19,6 +19,8 @@ String root = request.getProtocol();
 <h3>root : <%=root %></h3>
 <h2>${userAgent }</h2>
 <div id="map" style="width:500px;height:400px;"></div>
+
+
 
 </body>
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=5d98df3cbf6c3a94417916c079e9b38c27b07ba3&libraries=services,clusterer""></script>
