@@ -18,7 +18,7 @@
 		</bean>
 	
 	<context:component-scan base-package="com.dktechin.deva.service"></context:component-scan>
-	<util:properties id="prop" location="classpath:/springConfig/db-properties.xml"> </util:properties>
+	<util:properties id="prop" location="classpath:/configsys/db-per.xml"> </util:properties>
 	
 		
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

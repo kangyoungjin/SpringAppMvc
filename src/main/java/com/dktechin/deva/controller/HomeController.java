@@ -35,6 +35,9 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		String agent = req.getHeader("User-Agent");
 		
+		String test = "test";
+		
+		
 		model.addAttribute("serverTime", formattedDate );
 		model.addAttribute("userAgent", agent);
 		return "home";
