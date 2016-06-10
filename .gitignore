@@ -20,6 +20,8 @@ target/
 .classpath
 /classes/
 /test-classes/
+.classpath
+/target/
 
 # Eclipse Core
 .project
